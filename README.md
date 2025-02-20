@@ -23,7 +23,6 @@ QR Code Library
 
 --------------------------------------------------------------------
 use directly here: https://ynubhav.github.io/-QR-Code-Generator-App/
------------------
 
 For any queries or contributions,
 
