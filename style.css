@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
 :root {
   --primary: #47185c;
   --primary-dark: #14001d;
@@ -29,6 +30,7 @@ body {
   width: 400px;
   background-color: white;
 }
+
 .upper h1 {
   font-size: 32px;
   font-weight: 400;
@@ -41,6 +43,7 @@ form {
   flex-direction: column;
   align-items: center;
 }
+
 form {
   margin-top: 10px;
   gap: 10px;
@@ -51,10 +54,12 @@ form input {
   height: 40px;
   padding: 10px 15px;
 }
+
 form input:focus-visible {
   border: 1px solid var(--primary);
   outline: 1px solid var(--primary);
 }
+
 form button {
   width: 100%;
   height: 40px;
@@ -65,10 +70,11 @@ form button {
   opacity: 0.9;
   transition: 0.3s ease-in;
 }
+
 form button:hover {
   opacity: 1;
-  transition: 0.3s ease-in;
 }
+
 form button:active {
   background-color: var(--primary-dark);
 }
@@ -76,22 +82,54 @@ form button:active {
 .qr_container {
   border: 1px solid var(--primary);
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-
   height: 0;
   opacity: 0;
-
   transition: opacity 0.3s ease-in, height 0.1s ease;
 }
+
 .qr_container.show {
   padding: 10px;
-  height: 150px;
+  height: 180px;
   opacity: 1;
-
   transition: opacity 0.3s ease-in, height 0.1s ease;
 }
+
 .qr_container img {
-  height: 100%;
+  height: 150px;
+}
+
+/* Initially hide the download button */
+.hidden {
+  display: none;
+}
+
+/* Style for the download button */
+#downloadBtn {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  padding: 10px 15px;
+  opacity: 0.9;
+  transition: 0.3s ease-in;
+}
+
+#downloadBtn:hover {
+  opacity: 1;
+}
+
+#downloadBtn:active {
+  background-color: var(--primary-dark);
 }
 
 @media (max-width: 500px) {
