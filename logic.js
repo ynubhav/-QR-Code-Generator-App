@@ -13,11 +13,23 @@ const renderQRCode = (url) => {
   qrImageEl.addEventListener("load", () => {
     qrContainerEl.classList.add("show");
     generateBtnEl.innerText = "Generate QR Code";
-
-    // Set the download link
-    downloadBtnEl.href = url;
     downloadBtnEl.classList.remove("hidden"); // Show the download button
   });
+
+  // Set download functionality
+  downloadBtnEl.onclick = async () => {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = blobUrl;
+    link.download = "qrcode.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(blobUrl);
+  };
 };
 
 qrFormEl.addEventListener("submit", (event) => {
